@@ -1,35 +1,34 @@
-import { Github } from "@medusajs/icons"
 import { Button, Heading } from "@medusajs/ui"
+import Image from "next/image"
+import cottonField from '../../../../../public/cotton-field.jpg';
+import { ribeye } from "app/layout";
 
 const Hero = () => {
   return (
-    <div className="h-[75vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle">
-      <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:p-32 gap-6">
-        <span>
-          <Heading
-            level="h1"
-            className="text-3xl leading-10 text-ui-fg-base font-normal"
-          >
-            Ecommerce Starter Template
-          </Heading>
-          <Heading
-            level="h2"
-            className="text-3xl leading-10 text-ui-fg-subtle font-normal"
-          >
-            Powered by Medusa and Next.js
-          </Heading>
-        </span>
-        <a
-          href="https://github.com/medusajs/nextjs-starter-medusa"
-          target="_blank"
+    <section className="h-[75vh] relative">
+      <Image
+        alt="Cotton field"
+        src={cottonField}
+        placeholder="blur"
+        quality={100}
+        fill
+        style={{
+          objectFit: 'cover',
+        }}
+      />
+      <div className={`absolute inset-0 flex flex-col justify-center items-center text-center px-8 gap-6 z-10`}>
+        <Heading level="h1" className={`${ribeye.className} text-3xl text-rose-700 p-4 rounded`}>
+          Organic Cotton Made Simple
+        </Heading>
+        <Button
+          className={`${ribeye.className} text-rose-700 text-xl outline`}
+          size="xlarge"
+          variant="transparent"
         >
-          <Button variant="secondary">
-            View on GitHub
-            <Github />
-          </Button>
-        </a>
+          Shop Now
+        </Button>
       </div>
-    </div>
+    </section>
   )
 }
 
