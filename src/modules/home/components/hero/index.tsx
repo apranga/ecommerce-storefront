@@ -1,7 +1,11 @@
-import { Button, Heading } from "@medusajs/ui"
 import Image from "next/image"
-import cottonField from '../../../../../public/cotton-field.jpg';
+import Link from "next/link";
+
+import { Button, Heading } from "@medusajs/ui"
 import { ribeye } from "app/layout";
+
+import cottonField from '../../../../../public/cotton-field.jpg';
+
 
 const Hero = () => {
   return (
@@ -17,16 +21,18 @@ const Hero = () => {
         }}
       />
       <div className={`absolute inset-0 flex flex-col justify-center items-center text-center px-8 gap-6 z-10`}>
-        <Heading level="h1" className={`${ribeye.className} text-3xl text-rose-700 p-4 rounded`}>
+        <Heading level="h1" className={`${ribeye.className} text-3xl text-rose-700 p-4 rounded bg-ui-bg-highlight`}>
           Organic Cotton Made Simple
         </Heading>
-        <Button
-          className={`${ribeye.className} text-rose-700 text-xl outline`}
-          size="xlarge"
-          variant="transparent"
-        >
-          Shop Now
-        </Button>
+        <Link href="store">
+          <Button
+            className={`${ribeye.className} text-rose-700 text-xl outline bg-ui-bg-highlight`}
+            size="xlarge"
+            variant="transparent"
+          >
+            Shop Now
+          </Button>
+        </Link>
       </div>
     </section>
   )
