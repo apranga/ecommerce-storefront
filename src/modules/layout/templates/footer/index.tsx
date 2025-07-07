@@ -55,7 +55,8 @@ export default async function Footer() {
                             "hover:text-ui-fg-base",
                             children && "txt-small-plus"
                           )}
-                          href={`/categories/${c.handle}`}
+                          // href={`/categories/${c.handle}`}
+                          href={`/store?category_id=${c.id}`}
                           data-testid="category-link"
                         >
                           {c.name}
@@ -67,7 +68,8 @@ export default async function Footer() {
                                 <li key={child.id}>
                                   <LocalizedClientLink
                                     className="hover:text-ui-fg-base"
-                                    href={`/categories/${child.handle}`}
+                                    // href={`/categories/${child.handle}`}
+                                    href={`/store?category_id=${child.id}`}
                                     data-testid="category-link"
                                   >
                                     {child.name}

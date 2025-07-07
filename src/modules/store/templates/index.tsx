@@ -10,6 +10,7 @@ import { listCategories } from "@lib/data/categories"
 import {
   ActiveFilterOptionValues
 } from "@modules/store/components/refinement-list/filter-products-by-category"
+import ProductListTitle from "./product-list-title"
 
 const StoreTemplate = async ({
   page,
@@ -35,7 +36,10 @@ const StoreTemplate = async ({
       />
       <div className="w-full">
         <div className="mb-8 text-2xl-semi">
-          <h1 data-testid="store-page-title">All products</h1>
+          <ProductListTitle
+            categoryId={activeFilters?.categoryId}
+            data={{ productCategories }}
+          />
         </div>
         <Suspense fallback={<SkeletonProductGrid />}>
           <PaginatedProducts

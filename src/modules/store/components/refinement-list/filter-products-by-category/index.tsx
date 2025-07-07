@@ -10,7 +10,7 @@ export type ActiveFilterOptionValues = {
 type FilterProductsByCategoryProps = {
   activeFilters?: ActiveFilterOptionValues,
   productCategories: StoreProductCategory[],
-  setQueryParams: (name: string, value: string) => void
+  setQueryParams: (nameToValue: Map<string, string>) => void
   "data-testid"?: string
 }
 
@@ -21,8 +21,13 @@ const FilterProductsByCategory = ({
   setQueryParams,
   productCategories
 }: FilterProductsByCategoryProps) => {
-  const handleChange = (value: string) => {
-    setQueryParams("category_id", value)
+
+  const handleChange = (categoryId: string) => {
+    const nameToValue = new Map([
+      ["category_id", categoryId],
+      ["page", "1"]
+    ])
+    setQueryParams(nameToValue)
   }
 
   return (

@@ -32,17 +32,23 @@ const RefinementList = (props : RefinementListProps) => {
   const searchParams = useSearchParams()
 
   const createQueryString = useCallback(
-    (name: string, value: string) => {
+    (nameToValue: Map<string, string>) => {
       const params = new URLSearchParams(searchParams)
-      params.set(name, value)
-
+      nameToValue.forEach((value, name) => {
+        params.set(name, value)
+      })
       return params.toString()
     },
     [searchParams]
   )
 
   const setQueryParams = (name: string, value: string) => {
-    const query = createQueryString(name, value)
+    const query = createQueryString(new Map([[name, value]]))
+    router.push(`${pathname}?${query}`)
+  }
+
+  const setMultipleQueryParams = (nameToValue: Map<string, string>) => {
+    const query = createQueryString(nameToValue)
     router.push(`${pathname}?${query}`)
   }
 
@@ -53,7 +59,7 @@ const RefinementList = (props : RefinementListProps) => {
           <FilterProductsByCategory
             data-testid={props["data-testid"]}
             activeFilters={props.activeFilters}
-            setQueryParams={setQueryParams}
+            setQueryParams={setMultipleQueryParams}
             productCategories={props.data.productCategories}
           />
         ) : (
