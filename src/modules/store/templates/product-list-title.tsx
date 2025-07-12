@@ -25,18 +25,19 @@ const ProductListTitle = ({
 
   return (
     <>
-      <h1 data-testid="store-page-title">All products</h1>
+      <h1 data-testid="store-page-title">Products</h1>
       { activeCategory ? (
-        <Badge size="large">
+        <Badge size="large" className={`border-cyan-600 border-2 text-cyan-600 bg-cyan-50`}>
           <div className="flex flex-row items-center">
-            <span className="flex-1 pr-1 italic font-semibold">
+            <span className="flex-1 pr-1 font-semibold text-cyan-600">
               {activeCategory.name}
             </span>
             <IconButton
               variant="transparent"
               onClick={handleRemoveCategory}
+              className="text-cyan-600 hover:bg-transparent"
             >
-              <X size={14}/>
+              <X size={14} className="stroke-cyan-600" />
             </IconButton>
           </div>
         </Badge>

@@ -21,12 +21,15 @@ const Hero = () => {
         }}
       />
       <div className={`absolute inset-0 flex flex-col justify-center items-center text-center px-8 gap-6 z-10`}>
-        <Heading level="h1" className={`${ribeye.className} text-3xl text-rose-700 p-4 rounded bg-ui-bg-highlight`}>
-          Organic Cotton Made Simple
+        <Heading level="h1" className={`${ribeye.className} text-4xl text-cyan-600 p-4 rounded bg-ui-bg-highlight uppercase outline`}>
+          Earth Cotton
+          <p className="text-xl lowercase pt-2">
+            Organic Cotton Made Simple
+          </p>
         </Heading>
         <Link href="store">
           <Button
-            className={`${ribeye.className} text-rose-700 text-xl outline bg-ui-bg-highlight`}
+            className={`${ribeye.className} text-cyan-600 text-xl outline bg-ui-bg-highlight`}
             size="xlarge"
             variant="transparent"
           >
