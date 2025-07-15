@@ -41,7 +41,7 @@ Features include:
 
 ### Prerequisites
 
-- Follow the installation steps [here]() for the companion ecommerce backend. The backend repo name is `ecommerce`.
+- Follow the installation steps [here](https://github.com/apranga/ecommerce) for the companion ecommerce backend. The backend repo name is `ecommerce`.
 - Product images are hosted on the cloud, such as an AWS S3 bucket. Make a note of the base URL of your hosting service. For example, below is a hostname for AWS S3 (which is a dummy value), `commerce-project-a0a96fd3-afdd-49c0-b6fd-ccd23bc15def.s3.us-west-1.amazonaws.com`
 
 ### Clone the repository
