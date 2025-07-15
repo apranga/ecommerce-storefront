@@ -5,6 +5,8 @@ import { StoreRegion } from "@medusajs/types"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
+import { ribeye } from "app/layout";
+
 
 export default async function Nav() {
   const regions = await listRegions().then((regions: StoreRegion[]) => regions)
@@ -22,10 +24,10 @@ export default async function Nav() {
           <div className="flex items-center h-full">
             <LocalizedClientLink
               href="/"
-              className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
+              className={`${ribeye.className} text-cyan-600 txt-compact-xlarge-plus hover:text-ui-fg-base uppercase`}
               data-testid="nav-store-link"
             >
-              Medusa Store
+              Earth Cotton
             </LocalizedClientLink>
           </div>
 

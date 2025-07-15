@@ -1,62 +1,34 @@
-<p align="center">
-  <a href="https://www.medusajs.com">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/59018053/229103275-b5e482bb-4601-46e6-8142-244f531cebdb.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/59018053/229103726-e5b529a3-9b3f-4970-8a1f-c6af37f087bf.svg">
-    <img alt="Medusa logo" src="https://user-images.githubusercontent.com/59018053/229103726-e5b529a3-9b3f-4970-8a1f-c6af37f087bf.svg">
-    </picture>
-  </a>
-</p>
+# Ecommerce Storefront
 
-<h1 align="center">
-  Medusa Next.js Starter Template
-</h1>
+This project is the frontend for an ecommerce storefront application. The app UI features a sample clothing company, Earth Cotton.
 
-<p align="center">
-Combine Medusa's modules for your commerce backend with the newest Next.js 15 features for a performant storefront.</p>
+## Overview
 
-<p align="center">
-  <a href="https://github.com/medusajs/medusa/blob/master/CONTRIBUTING.md">
-    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat" alt="PRs welcome!" />
-  </a>
-  <a href="https://discord.gg/xpCwq3Kfn8">
-    <img src="https://img.shields.io/badge/chat-on%20discord-7289DA.svg" alt="Discord Chat" />
-  </a>
-  <a href="https://twitter.com/intent/follow?screen_name=medusajs">
-    <img src="https://img.shields.io/twitter/follow/medusajs.svg?label=Follow%20@medusajs" alt="Follow @medusajs" />
-  </a>
-</p>
+The `ecommerce-storefront` is built with:
 
-### Prerequisites
-
-To use the [Next.js Starter Template](https://medusajs.com/nextjs-commerce/), you should have a Medusa server running locally on port 9000.
-For a quick setup, run:
-
-```shell
-npx create-medusa-app@latest
-```
-
-Check out [create-medusa-app docs](https://docs.medusajs.com/learn/installation) for more details and troubleshooting.
-
-# Overview
-
-The Medusa Next.js Starter is built with:
-
+- [Medusa](https://medusajs.com/)
 - [Next.js](https://nextjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Typescript](https://www.typescriptlang.org/)
-- [Medusa](https://medusajs.com/)
 
 Features include:
 
 - Full ecommerce support:
+
+  - Home Page
+    ![home hero section](./docs/1a-home-hero.png)
+    ![home company features](./docs/1b-home-features.png)
   - Product Detail Page
+    ![product details](./docs/3a-product-details.png)
   - Product Overview Page
+    ![product overview](./docs/2a-products.png)
   - Product Collections
+    ![product collections](./docs/2b-products-collections.png)
   - Cart
   - Checkout with Stripe
   - User Accounts
   - Order Details
+
 - Full Next.js 15 support:
   - App Router
   - Next fetching/caching
@@ -65,61 +37,66 @@ Features include:
   - Streaming
   - Static Pre-Rendering
 
-# Quickstart
+## How to Run
 
-### Setting up the environment variables
+### Prerequisites
 
-Navigate into your projects directory and get your environment variables ready:
+- Follow the installation steps [here](https://github.com/apranga/ecommerce) for the companion ecommerce backend. The backend repo name is `ecommerce`.
+- Product images are hosted on the cloud, such as an AWS S3 bucket. Make a note of the base URL of your hosting service. For example, below is a hostname for AWS S3 (which is a dummy value), `commerce-project-a0a96fd3-afdd-49c0-b6fd-ccd23bc15def.s3.us-west-1.amazonaws.com`
+
+### Clone the repository
+
+- Use `git clone` to clone this repo.
+
+### Set up the environment variables
+
+- Navigate into your project directory and set up the `.env.local` file. Update the `.env` values accordingly:
 
 ```shell
-cd nextjs-starter-medusa/
+cd ecommerce-storefront/
 mv .env.template .env.local
 ```
 
 ### Install dependencies
 
-Use Yarn to install all dependencies.
+- Use yarn or npm to install all dependencies.
 
 ```shell
 yarn
 ```
 
-### Start developing
+or
 
-You are now ready to start up your project.
+```shell
+npm install
+```
+
+### Run the app
+
+- Start the frontend server
 
 ```shell
 yarn dev
 ```
 
-### Open the code and start customizing
-
-Your site is now running at http://localhost:8000!
-
-# Payment integrations
-
-By default this starter supports the following payment integrations
-
-- [Stripe](https://stripe.com/)
-
-To enable the integrations you need to add the following to your `.env.local` file:
+or
 
 ```shell
-NEXT_PUBLIC_STRIPE_KEY=<your-stripe-public-key>
+npm run dev
 ```
 
-You'll also need to setup the integrations in your Medusa server. See the [Medusa documentation](https://docs.medusajs.com) for more information on how to configure [Stripe](https://docs.medusajs.com/resources/commerce-modules/payment/payment-provider/stripe#main).
+The ecommerce storefront is now running at http://localhost:8000!
 
-# Resources
+## Resources
 
-## Learn more about Medusa
+### Medusa
+
+This project was scaffolded with `create-medusa-app`, an open-source ecommerce framework. Below are resources to learn more.
 
 - [Website](https://www.medusajs.com/)
 - [GitHub](https://github.com/medusajs)
 - [Documentation](https://docs.medusajs.com/)
 
-## Learn more about Next.js
+### Data Sourcing
 
-- [Website](https://nextjs.org/)
-- [GitHub](https://github.com/vercel/next.js)
-- [Documentation](https://nextjs.org/docs)
+The sample company, Earth Cotton, is fictitious. The product images are taken from the ecommerce website [TeePublic](https://www.teepublic.com/t-shirts). The project is purely for software development purposes with no commercial intent.
